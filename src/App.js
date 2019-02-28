@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+// import './App.css';  
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Container>
+        {/* <button className="button--success">HEllo</button>
+        <button className="button--danger">HEllo</button> */}
+        <Button />
+        <Button danger />
+      </Container>
     );
   }
 }
+
+const Container = styled.div`
+  height: 100vh;
+  width: 100%;
+  background-color: gray;
+`
+
+const Button = styled.button`
+  border-radius: 50px;
+  padding: 5px;
+  min-width: 120px;
+  color: white;
+  font-weight: 600;
+  -webkit-appearance: none;
+  cursor: pointer;
+  &:active,
+  &:focus {
+    outline: none;
+  }
+`;
 
 export default App;
